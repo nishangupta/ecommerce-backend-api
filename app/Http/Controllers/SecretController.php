@@ -9,6 +9,6 @@ class SecretController extends Controller
 {
     public function index()
     {
-        return view('app');
+        return Secret::all();
     }
 }

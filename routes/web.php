@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/secret', 'App\Http\Controllers\SecretController@index');
+Route::get('/', 'App\Http\Controllers\SecretController@index');
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/users', function () {
+  return User::all();
+});
